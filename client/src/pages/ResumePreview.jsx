@@ -1,6 +1,5 @@
 // src/components/ResumePreview.jsx
 import { useSelector } from "react-redux";
-import { MapPinned, Phone, Mail, MapIcon } from "lucide-react";
 export default function ResumePreview() {
   const resume = useSelector((state) => state.resume.data);
   const header = resume.header || {};
@@ -11,23 +10,23 @@ export default function ResumePreview() {
   const projects = resume.projects || [];
 
   return (
-    <div className="w-full max-w-lg bg-white p-6 shadow rounded text-sm font-serif">
+    <div className="w-full max-w-lg p-6 shadow rounded text-sm font-serif" style={{ backgroundColor: "#ffff" }}>
       <h1 className="text-xl font-bold text-center">
         {header.firstName} {header.lastName}
       </h1>
       <hr className="my-4" />
       <div className="flex justify-between">
         <div className="flex items-center">
-          <Mail size={16} strokeWidth={1.5} />
-          <p className="text-center text-gray-600 ml-1">{header.email}</p>
+          <i className="fa-solid fa-envelope"></i>
+          <p className="text-center ml-1" style={{ color: "#4B5563" }}>{header.email}</p>
         </div>
         <div className="flex items-center">
-          <Phone size={16} strokeWidth={1.5} />
-          <p className="text-center text-gray-600 ml-1">{header.phone}</p>
+          <i className="fa-solid fa-phone"></i>
+          <p className="text-center ml-1" style={{ color: "#4B5563" }}>{header.phone}</p>
         </div>
         <div className="flex items-center">
-          <MapPinned size={20} strokeWidth={1.5} />
-          <p className="text-center text-gray-600 ml-1">
+          <i class="fa-solid fa-location-dot"></i>
+          <p className="text-center ml-1" style={{ color: "#4B5563" }}>
             {header.city}, {header.state}
           </p>
         </div>
@@ -35,9 +34,9 @@ export default function ResumePreview() {
       {/* Skills */}
       {skills.length > 0 && (
         <section className="mb-4 mt-4">
-          <h2 className="font-semibold text-gray-800">Skills</h2>
+          <h2 className="font-semibold" style={{ color: "#1F2937" }}>Skills</h2>
           <hr className="my-4" />
-          <ul className="list-disc list-inside text-gray-700 mt-1">
+          <ul className="list-disc list-inside mt-1" style={{ color: "#374151" }}>
             {skills.map((skill, i) => (
               <li key={i}>{skill}</li>
             ))}
@@ -48,13 +47,13 @@ export default function ResumePreview() {
       {/* Experience */}
       {experience.length > 0 && (
         <section className="mb-4">
-          <h2 className="font-semibold text-gray-800">Experience</h2>
+          <h2 className="font-semibold" style={{ color: "#1F2937" }}>Experience</h2>
           <hr className="my-4" />
           {experience.map((exp, i) => (
             <div key={i} className="mb-2">
               <p className="font-medium">
                 {exp.jobTitle} - {exp.company}{" "}
-                <span className="text-gray-600 text-sm">({exp.duration})</span>
+                <span className="text-sm" style={{ color: "#4B5563" }}>({exp.duration})</span>
               </p>
               {/* <p className="text-gray-600 text-sm">{exp.duration}</p> */}
             </div>
@@ -69,7 +68,7 @@ export default function ResumePreview() {
           (p.description && p.description.trim() !== "")
       ).length > 0 && (
         <section className="mb-4">
-          <h2 className="font-semibold text-gray-800">Projects</h2>
+          <h2 className="font-semibold" style={{ color: "#1F2937" }}>Projects</h2>
           <hr className="my-4" />
           {projects
             .filter(
@@ -80,7 +79,7 @@ export default function ResumePreview() {
             .map((proj, i) => (
               <div key={i} className="mb-2">
                 <p className="font-medium">{proj.projectTitle}</p>
-                <p className="text-gray-600 text-sm">{proj.description}</p>
+                <p className="text-sm" style={{ color: "#4B5563" }}>{proj.description}</p>
               </div>
             ))}
         </section>
@@ -89,12 +88,12 @@ export default function ResumePreview() {
       {/* Education */}
       {education.length > 0 && (
         <section className="mb-4">
-          <h2 className="font-semibold text-gray-800">Education</h2>
+          <h2 className="font-semibold" style={{ color: "#1F2937" }}>Education</h2>
           <hr className="my-4" />
           {education.map((edu, i) => (
             <div key={i}>
               <p className="font-medium">{edu.degree}</p>
-              <p className="text-gray-600 text-sm">
+              <p className="text-sm" style={{ color: "#4B5563" }}>
                 {edu.institution} ({edu.year})
               </p>
             </div>
@@ -109,7 +108,7 @@ export default function ResumePreview() {
           (cert.issuer && cert.issuer.trim() !== "")
       ).length > 0 && (
         <section className="mb-4">
-          <h2 className="font-semibold text-gray-800">Certificate</h2>
+          <h2 className="font-semibold" style={{ color: "#1F2937" }}>Certificate</h2>
           <hr className="my-4" />
           {certificates
             .filter(
@@ -120,7 +119,7 @@ export default function ResumePreview() {
             .map((cert, i) => (
               <div key={i}>
                 <p className="font-medium">{cert.certificate}</p>
-                <p className="text-gray-600 text-sm">{cert.issuer}</p>
+                <p className="text-sm" style={{ color: "#4B5563" }}>{cert.issuer}</p>
               </div>
             ))}
         </section>
