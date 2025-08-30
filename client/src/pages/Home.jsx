@@ -13,16 +13,16 @@ const Home = () => {
         </p>
         <div className="flex justify-center gap-4 flex-wrap">
           <Link
-            to="/manual"
+            to="/resumebuilder"
             className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 transition"
           >
             Build Manually
           </Link>
           <Link
-            to="/ai-builder"
+            to="/airesumegenerator"
             className="bg-purple-600 text-white px-6 py-3 rounded-xl hover:bg-purple-700 transition"
           >
-            Use AI Assistance (₹49/month)
+            Use AI Assistance (₹29/resumegeneration)
           </Link>
         </div>
       </section>
